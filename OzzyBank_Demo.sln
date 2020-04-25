@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzzyBank_Demo.Api", "OzzyBank_Demo\OzzyBank_Demo.Api.csproj", "{96F98888-FEA1-4E7E-9292-C79C0422EFD7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzzyBank_Demo.Service", "src\OzzyBank_Demo.Service\OzzyBank_Demo.Service.csproj", "{6F35F6AE-D06B-4C93-A6E5-63B2637982D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzzyBank_Demo.Repository", "src\OzzyBank_Demo.Repository\OzzyBank_Demo.Repository.csproj", "{7FA3E0F0-D6D7-404B-A46D-EC816320A8B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzzyBank_Demo.Data", "src\OzzyBank_Demo.Data\OzzyBank_Demo.Data.csproj", "{7FA3E0F0-D6D7-404B-A46D-EC816320A8B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzzyBank_Demo.Domain", "src\OzzyBank_Demo.Domain\OzzyBank_Demo.Domain.csproj", "{44BAEEAF-0205-4277-8735-46EA405D92EA}"
 EndProject
@@ -17,7 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Service", "2 - Service"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{28EB8813-488A-46D4-B9E8-BD8504406CF5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Repository", "4 - Repository", "{DE628FBB-00D6-46C3-8A00-DA5D20DC4EA9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{D0795C0E-A7C7-4B08-9168-4BE80936DD49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{64CCFC9E-171A-411D-8131-ECD2F7C4D61B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{071BDA75-7985-491D-A0C4-AFB1A0BB85AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzzyBank_Demo.CrossCutting.IoC", "src\OzzyBank_Demo.CrossCutting.IoC\OzzyBank_Demo.CrossCutting.IoC.csproj", "{D72374F2-F317-4D3F-AFA3-295FAD7EF850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzzyBank_Demo.Api", "src\OzzyBank_Demo.Api\OzzyBank_Demo.Api.csproj", "{FC7A85D6-0316-4B61-96C8-D9DFFC368A83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96F98888-FEA1-4E7E-9292-C79C0422EFD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96F98888-FEA1-4E7E-9292-C79C0422EFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96F98888-FEA1-4E7E-9292-C79C0422EFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96F98888-FEA1-4E7E-9292-C79C0422EFD7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F35F6AE-D06B-4C93-A6E5-63B2637982D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F35F6AE-D06B-4C93-A6E5-63B2637982D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F35F6AE-D06B-4C93-A6E5-63B2637982D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,15 +43,26 @@ Global
 		{44BAEEAF-0205-4277-8735-46EA405D92EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44BAEEAF-0205-4277-8735-46EA405D92EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44BAEEAF-0205-4277-8735-46EA405D92EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72374F2-F317-4D3F-AFA3-295FAD7EF850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72374F2-F317-4D3F-AFA3-295FAD7EF850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72374F2-F317-4D3F-AFA3-295FAD7EF850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72374F2-F317-4D3F-AFA3-295FAD7EF850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC7A85D6-0316-4B61-96C8-D9DFFC368A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC7A85D6-0316-4B61-96C8-D9DFFC368A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC7A85D6-0316-4B61-96C8-D9DFFC368A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC7A85D6-0316-4B61-96C8-D9DFFC368A83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{96F98888-FEA1-4E7E-9292-C79C0422EFD7} = {B66748B5-D31F-4759-AE50-58E002CDFDB6}
 		{6F35F6AE-D06B-4C93-A6E5-63B2637982D1} = {3AB402E4-8CAD-40A6-8A3B-3DA59DC17007}
-		{7FA3E0F0-D6D7-404B-A46D-EC816320A8B3} = {DE628FBB-00D6-46C3-8A00-DA5D20DC4EA9}
 		{44BAEEAF-0205-4277-8735-46EA405D92EA} = {28EB8813-488A-46D4-B9E8-BD8504406CF5}
+		{64CCFC9E-171A-411D-8131-ECD2F7C4D61B} = {D0795C0E-A7C7-4B08-9168-4BE80936DD49}
+		{071BDA75-7985-491D-A0C4-AFB1A0BB85AE} = {D0795C0E-A7C7-4B08-9168-4BE80936DD49}
+		{7FA3E0F0-D6D7-404B-A46D-EC816320A8B3} = {64CCFC9E-171A-411D-8131-ECD2F7C4D61B}
+		{D72374F2-F317-4D3F-AFA3-295FAD7EF850} = {071BDA75-7985-491D-A0C4-AFB1A0BB85AE}
+		{FC7A85D6-0316-4B61-96C8-D9DFFC368A83} = {B66748B5-D31F-4759-AE50-58E002CDFDB6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F2663684-4736-4E63-BC91-E6FEB3725E29}

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using OzzyBank_Demo.Domain.Interfaces.Repository;
 
 namespace OzzyBank_Demo.Repository
 {

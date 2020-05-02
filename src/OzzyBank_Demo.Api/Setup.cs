@@ -26,7 +26,7 @@ namespace OzzyBank_Demo.Api
                     Version = "v1",
                     Title = Constants.ApplicationName,
                     Description = Constants.ApplicationName,
-                    Contact = new OpenApiContact {Name = "Brazilian Team"}
+                    Contact = new OpenApiContact {Name = "Jeferson Gomide"}
                 });
                 
                 c.AddFluentValidationRules();

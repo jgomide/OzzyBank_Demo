@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using OzzyBank_Demo.Domain.Interfaces.Repository;
+using Npgsql;
 
 namespace OzzyBank_Demo.Repository
 {

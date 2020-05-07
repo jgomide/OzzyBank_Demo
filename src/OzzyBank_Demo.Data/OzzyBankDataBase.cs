@@ -1,4 +1,5 @@
-﻿using System.Data.Common;
+﻿using System;
+using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
 using Npgsql;
@@ -8,19 +9,23 @@ namespace OzzyBank_Demo.Repository
 {
     public class OzzyBankDatabase : IOzzyBankDatabase
     {
-        private readonly DatabaseConfiguration _config;
+        private readonly IDatabaseConfiguration _config;
 
-        public OzzyBankDatabase(DatabaseConfiguration config)
+        public OzzyBankDatabase(IDatabaseConfiguration config)
         {
             _config = config;
         }
 
         public async Task<DbConnection> CreateAndOpenConnection(CancellationToken stoppingToken = default)
         {
-            var connection = new NpgsqlConnection(_config.ConnectionString); 
+            Console.WriteLine("Test3:A " + _config.ConnectionString);
 
-            await connection.OpenAsync(stoppingToken); 
+            var connection = new NpgsqlConnection(_config.ConnectionString);
             
+            await connection.OpenAsync(stoppingToken);
+
+            Console.WriteLine("Test3:B");
+
             return connection;
         }
     }

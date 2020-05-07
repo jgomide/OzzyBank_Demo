@@ -18,15 +18,17 @@ namespace OzzyBank_Demo.Api.Controllers
         }
 
         //"api/v1/posts"
-        [HttpGet("api/posts")] 
+        [HttpGet("api/posts")]
         public async Task<IActionResult> GetAll()
         {
+            Console.WriteLine("Test1");
+
             var result = await _postService.GetAll();
-            
+
             return Ok(result);
         }
 
-        
+
         /*private List<Post> _posts;
         public PostsController()
         {
@@ -40,7 +42,7 @@ namespace OzzyBank_Demo.Api.Controllers
         [HttpGet("api/posts")]
         public IActionResult GetAll()
         {
-          return Ok(_posts);
+            return Ok(_posts);
         }*/
     }
 }

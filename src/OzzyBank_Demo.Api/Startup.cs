@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OzzyBank_Demo.Api.Middleware;
+using OzzyBank_Demo.Domain.Interfaces.Repository;
+using OzzyBank_Demo.Domain.Interfaces.Service;
+using OzzyBank_Demo.Repository;
+using OzzyBank_Demo.Service;
 using Serilog;
 
 namespace OzzyBank_Demo.Api
@@ -42,6 +46,11 @@ namespace OzzyBank_Demo.Api
                 {
                     fv.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
                 });
+            
+            
+            //services.AddScoped<IOzzyBankDatabase, OzzyBankDatabase>();
+            //services.AddScoped<IPostRepository, PostRepository>();
+            //services.AddScoped<IPostService, PostService>();
 
             services.AddCustomSwagger();
             services.AddSingleton(Log.Logger);
@@ -51,6 +60,8 @@ namespace OzzyBank_Demo.Api
             services.AddDependencyInjection();
             services.AddResponseCompression();
             services.Configure<GzipCompressionProviderOptions>(options => options.Level = CompressionLevel.Fastest);
+            
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

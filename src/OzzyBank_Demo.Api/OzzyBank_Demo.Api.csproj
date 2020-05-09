@@ -25,9 +25,4 @@
     <ProjectReference Include="..\OzzyBank_Demo.Service\OzzyBank_Demo.Service.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="Controllers" />
-  </ItemGroup>
-
 </Project>
